@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appian Code Extension</title>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- All CSS files  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/CSS/mainTheme.css">
+    <link rel="stylesheet" href="assets/CSS/navBar.css">
+    <link rel="stylesheet" href="assets/CSS/codeSnipped.css">
+    <link rel="stylesheet" href="assets/CSS/scrollbar.css">
+    <link rel="stylesheet" href="assets/CSS/colWidths.css">
+    <link rel="stylesheet" href="assets/CSS/codeInput.css">
+    <link rel="stylesheet" href="assets/CSS/syntaxHighlighter.css">
+    <link rel="stylesheet" href="assets/CSS/verticalNavBar.css">
+    <link rel="stylesheet" href="assets/CSS/columns.css">
+    <link rel="stylesheet" href="assets/CSS/codeButtons.css">
+
+
+
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <style>
+        .split {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .gutter {
+            background-color: #eee;
+            background-repeat: no-repeat;
+            background-position: 50%;
+        }
+
+        .gutter.gutter-horizontal {
+            cursor: col-resize;
+        }
+    </style>
+    <title>React App</title>
+</head>
+
+<body style="overflow-y: hidden; overflow-x: hidden;">
+    <script defer src="assets/js/reactReflex_01.js"></script>
+
+    <div class="app-header" style="background-color: #02203c; color: white; height: 5vh;">
+
+    </div>
+    <div class="columns">
+        <div class="vertical-navbar">
+            <div class="navigation-heading">&#x2022; <span class="code-orange"><</span><span class="code-orange">app </span><span class="code-cyan">i=</span><span class="code-yellow">"an"</span><span class="code-orange">/></span></div>
+            <ul>
+                <li class="nav-item active">
+                    <a class="nav-link" id="generateQE" href="#resultContainer"><i class="fas fa-file-alt"></i>QE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="generateCast" href="#resultContainer"><i class="far fa-clone"></i>Casting
+                        Rule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="generateRecordCast" href="#resultContainer"><i class="far fa-clone"></i>Record Casting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="generateXSD" href="#resultContainer"><i
+                            class="far fa-calendar-alt"></i>XSD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getGridLayout" href="#resultContainer"><i class="far fa-chart-bar"></i>Grid
+                        Layout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getGridLayoutRCD" href="#resultContainer"><i class="far fa-chart-bar"></i>Grid
+                        Layout Record</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getForm" href="#resultContainer"><i
+                            class="fa-brands fa-wpforms"></i>Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getRcdForm" href="#resultContainer"><i
+                            class="fa-brands fa-wpforms"></i>Record Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getGridColumn" href="#resultContainer"><i
+                            class="fa-brands fa-wpforms"></i>Grid Field</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getGridColumnRCD" href="#resultContainer"><i
+                            class="fa-brands fa-wpforms"></i>Grid Field Record</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getAppianCode" href="#resultContainer"><i
+                            class="fa-solid fa-code"></i>Appian Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getBillboard" href="#resultContainer"><i
+                            class="fa-solid fa-code"></i>Billboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getViewData" href="#resultContainer"><i
+                            class="fa-solid fa-table-list"></i></i>View Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getCDTInfo" href="#resultContainer"><i class="far fa-copy"></i>CDT Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getViewDetails" href="#resultContainer"><i class="far fa-copy"></i>Record
+                        Fields</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="getWorkInfo" href="#resultContainer"><i
+                            class="fa-solid fa-bars-staggered"></i>
+                        Artifacts
+                    </a>
+                </li>
+                <!-- <li class="nav-item toggleInput">
+                    <a class="nav-link" href="#resultContainer">
+                        <i class="fa-solid fa-window-minimize"></i>
+
+                        Hide Input</a>
+                </li>
+                <li class="nav-item nothing">
+                    <a class="nav-link" href="#resultContainer">
+                        <i class="fa-solid fa-window-minimize"></i>
+
+                        Nothing</a>
+                </li> -->
+            </ul>
+        </div>
+        
+        <div class="split" style="width: 86vw;">
+            <div id="split-0">
+                <i class="fa-solid fa-play" id="code-run"></i>
+                <!-- <button id="code-run">Run</button> -->
+                <div class="code-input" style="background-color: #f7f7f7; height: 75vh;">
+                    <!-- <textarea id="code-editor" style="border: none;" spellcheck="false"
+                    oninput="update(this.value); sync_scroll(this);" onscroll="sync_scroll(this);"
+                    onkeydown="check_keyEvents(this, event);">
+                </textarea> -->
+                    <!-- <pre id="highlighting" aria-hidden="true">
+                    <code class="language-html" id="highlighting-content"></code>
+                </pre> -->
+                    <textarea id="code-editor" name="code-editor" spellcheck="false" style="color: black;"
+                        onkeydown="check_keyEvents(this, event);"></textarea>
+                </div>
+                <div class="rule-input" id="rule-inputs"
+                    style="height: 15vh; border-top: 3px solid #281616; border-radius: 12px;">
+                    <div class="col-50">
+                        <input type="text" id="cdtName" name="cdtName" placeholder="CDT Name"><br>
+                    </div>
+                    <div class="col-45">
+                        <input type="text" id="checkIsNullFun" name="checkIsNullFun"
+                            placeholder="CheckIsNull Function"><br>
+                    </div>
+                    <div class="col-45">
+                        <input type="text" id="appPrefix" name="appPrefix" placeholder="App Prefix"><br>
+                    </div>
+                    <div class="col-5"> </div>
+                    <div class="col-50">
+                        <input type="text" id="gridLayoutData" name="gridLayoutData" placeholder="Data"><br>
+                    </div>
+                    <div class="col-90">
+                        <input type="text" id="entityValue" name="entityValue" placeholder="Data Store Entity"><br>
+                    </div>                    
+                </div>
+            </div>
+            <div id="split-1">
+                <div class="appian-code" id="appian-codes" style="height: 95vh; width: 100%;">
+                    <div class="result-container" id="result-con">
+                        <!-- <p class="language">
+                            Appian CodeChef
+                          </p> -->
+                        <div class="code-wrapper" id="result-wrapper">
+                            <pre style="margin-top: 40px;">
+                                <code id="code">
+                                </code>
+                            </pre>
+                            <button id="download-xsd" class="nav-link">
+                                <i class="fas fa-cloud-download-alt"></i>download-file</a>
+                            </button>
+                            <button id="copy-button" class="button-85">Copy</button>
+
+                            <span id="copy-success">Code Copied!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+
+    -->
+
+    <!-- All JS Files -->
+    <!-- <script defer src="assets/JS/navBar.js"></script> -->
+    <script src="assets/JS/utilsFunctions.js" type="application/javascript"></script>
+    <script src="assets/JS/formCreater.js" type="application/javascript"></script>
+    <script src="assets/JS/recordFormCreator.js" type="application/javascript"></script>
+    <script src="assets/JS/gridColumnsRecord.js" type="application/javascript"></script>
+    <script src="assets/JS/gridLayoutRecord.js" type="application/javascript"></script>
+
+    <script src="assets/js/billboardLayout.js" type="application/javascript"></script>
+    <script src="assets/JS/gridLayout.js" type="application/javascript"></script>
+    <script src="assets/JS/syntaxHighlighter.js" type="application/javascript"></script>
+    <script defer src="assets/JS/codeSnipped.js" type="application/javascript"></script>
+    <script defer src="assets/js/render.js" type="application/javascript"></script>
+    <script src="assets/JS/downloader.js" type="application/javascript"></script>
+    <script src="assets/JS/recordCasting.js" type="application/javascript"></script>
+    <script src="assets/JS/workInfo.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelCodeQuickChange.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelCodeAPIs.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelCodeOrderHandler.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelCodeCommonRegex.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelInfoGrids.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelInfoCards.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelCodeUtils.js" type="application/javascript"></script>
+    <script src="assets/JS/pixelCode.js" type="application/javascript"></script>
+    <script src="assets/JS/viewData.js" type="application/javascript"></script>
+    <script src="assets/JS/codeBlock.js" type="application/javascript"></script>
+    <script src="assets/JS/getViewFields.js" type="application/javascript"></script>
+    <script src="assets/JS/gridColumns.js" type="application/javascript"></script>
+    <script src="assets/JS/functionalRplacement.js" type="application/javascript"></script>
+
+</body>
+
+</html>
