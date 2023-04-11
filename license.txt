@@ -1,0 +1,8 @@
+Appian Extension : //version.0.0.9.0.1
+Application Author: "Ravi Swami & Siddharth Swami"
+
+Launch ID: 3.0.2.1.1.0
+Operating System: Window x-32
+Application Structure: Node Js <electron-module>
+
+email: raviswami@appcino.com
